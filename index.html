@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بورتفوليو | على سمير على</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Apply Cairo font to the body */
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #020617; /* A darker slate color */
+        }
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(to right, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        /* Animation for sections */
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project card hover effect */
+        .project-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(34, 211, 238, 0.1), 0 10px 10px -5px rgba(34, 211, 238, 0.08);
+        }
+        
+        /* Custom background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1), transparent 30%),
+                              radial-gradient(circle at 80% 30%, rgba(34, 211, 238, 0.1), transparent 30%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-950/70 backdrop-blur-lg sticky top-0 z-50 shadow-lg shadow-cyan-500/10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black gradient-text">على سمير على</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse font-semibold">
+                <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">نبذة عني</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">المهارات</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">المشاريع</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">تواصل معي</a>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden focus:outline-none text-2xl text-gray-300 hover:text-cyan-400">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 hover:text-cyan-400 transition-colors duration-300">نبذة عني</a>
+            <a href="#skills" class="block py-2 hover:text-cyan-400 transition-colors duration-300">المهارات</a>
+            <a href="#projects" class="block py-2 hover:text-cyan-400 transition-colors duration-300">المشاريع</a>
+            <a href="#contact" class="block py-2 hover:text-cyan-400 transition-colors duration-300">تواصل معي</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 py-20 md:py-32 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+                مطور تطبيقات <span class="gradient-text">Flutter</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10">متخصص في بناء تطبيقات جميلة وعالية الأداء لمنصتي iOS و Android.</p>
+            <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+                شاهد أعمالي
+            </a>
+        </div>
+    </main>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-slate-900/50 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                نبذة عني
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="max-w-3xl mx-auto text-center text-gray-300 text-lg leading-relaxed">
+                <p>
+                    أنا مطور تطبيقات شغوف باستخدام إطار عمل Flutter، أمتلك خبرة في تحويل الأفكار إلى تطبيقات واقعية تعمل بسلاسة على مختلف الأجهزة. أركز دائمًا على كتابة كود نظيف وقابل للصيانة، مع الاهتمام بأدق تفاصيل واجهة المستخدم وتجربة المستخدم لتقديم منتج نهائي يرضي العملاء والمستخدمين.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                المهارات التقنية
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-brands fa-flutter text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">Flutter</h3>
+                </div>
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-solid fa-code text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">Dart</h3>
+                </div>
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-solid fa-database text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">Firebase</h3>
+                </div>
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-solid fa-layer-group text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">State Management</h3>
+                </div>
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-solid fa-plug-circle-bolt text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">REST APIs</h3>
+                </div>
+                 <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-brands fa-git-alt text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">Git & GitHub</h3>
+                </div>
+                 <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+                    <i class="fa-solid fa-palette text-5xl gradient-text mb-4"></i>
+                    <h3 class="font-bold text-lg">UI/UX Design</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-slate-900/50 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                أبرز المشاريع
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Islamic App -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden shadow-lg border border-slate-700">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 mb-4 rounded-full bg-slate-700 flex items-center justify-center">
+                           <i class="fa-solid fa-mosque text-4xl gradient-text"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-cyan-400">التطبيق الإسلامي</h3>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed h-40 overflow-auto">
+                            هذا التطبيق الاسلامى يحتوى على القران كاملا، الاحاديث الاربعين النووية، مواقيت الصلاة، الاذكار، الادعية و أركان الاسلام الخمسة. التطبيق يحتوى على اضافات عديدة منها تشغيل الفديوهات من اليوتيوب، البحث عن اى كلمة فى القران، تعدد اللغات و امكانية تفعيل الوضع الليلى و اضافات اخرى.
+                        </p>
+                        <a href="https://github.com/tillawiy/Flutter-Islamic-App-" target="_blank" class="mt-auto bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-5 rounded-lg transition-colors duration-300">
+                           <i class="fa-brands fa-github"></i> عرض على GitHub
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 2: Chat App -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden shadow-lg border border-slate-700">
+                    <div class="p-6 flex flex-col items-center text-center">
+                         <div class="w-20 h-20 mb-4 rounded-full bg-slate-700 flex items-center justify-center">
+                           <i class="fa-solid fa-comments text-4xl gradient-text"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-cyan-400">تطبيق محادثة</h3>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed h-40 overflow-auto">
+                            تطبيق محادثة فوري مبني باستخدام Flutter و Firebase، يتيح للمستخدمين التسجيل وإرسال الرسائل النصية والصور في الوقت الفعلي ضمن غرف محادثة آمنة.
+                        </p>
+                         <a href="https://github.com/tillawiy/flutterChatApp" target="_blank" class="mt-auto bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-5 rounded-lg transition-colors duration-300">
+                           <i class="fa-brands fa-github"></i> عرض على GitHub
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 3: Time Tracking App -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden shadow-lg border border-slate-700">
+                    <div class="p-6 flex flex-col items-center text-center">
+                         <div class="w-20 h-20 mb-4 rounded-full bg-slate-700 flex items-center justify-center">
+                           <i class="fa-solid fa-clock-rotate-left text-4xl gradient-text"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-cyan-400">تطبيق تتبع الوقت</h3>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed h-40 overflow-auto">
+                           تطبيق لتتبع وإدارة الوقت والإنتاجية، مصمم لمساعدة المستخدمين على تنظيم مهامهم اليومية بكفاءة. يتيح تسجيل الأنشطة وتحليلها عبر رسوم بيانية.
+                        </p>
+                         <a href="https://github.com/tillawiy/Time-Tracking-app" target="_blank" class="mt-auto bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-5 rounded-lg transition-colors duration-300">
+                           <i class="fa-brands fa-github"></i> عرض على GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                تواصل معي
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="max-w-lg mx-auto text-center">
+                <p class="text-lg text-gray-300 mb-8">
+                    أنا متاح دائمًا لمناقشة المشاريع الجديدة أو فرص العمل. لا تتردد في التواصل معي.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center justify-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                        <i class="fas fa-envelope text-cyan-400 text-2xl"></i>
+                        <a href="mailto:egy.tillawiy@gmail.com" class="text-lg hover:text-cyan-300 transition-colors duration-300">egy.tillawiy@gmail.com</a>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                        <i class="fas fa-phone-alt text-cyan-400 text-2xl"></i>
+                        <a href="tel:01067696013" class="text-lg hover:text-cyan-300 transition-colors duration-300" dir="ltr">+20 106 769 6013</a>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                        <i class="fas fa-map-marker-alt text-cyan-400 text-2xl"></i>
+                        <p class="text-lg">ملوى، المنيا، مصر</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+             <div class="flex justify-center space-x-6 space-x-reverse mb-4">
+                <a href="https://github.com/tillawiy" target="_blank" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 | جميع الحقوق محفوظة لـ على سمير على.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // JavaScript for section fade-in animation on scroll
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
