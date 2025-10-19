@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Samir Ali - Full Stack Flutter Developer | Professional Portfolio</title>
+    <meta name="description" content="Ali Samir Ali - Expert Full Stack Flutter Developer specializing in building beautiful, high-performance mobile applications with modern technologies.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Poppins for English, Cairo for Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body class="bg-slate-950 text-gray-200">
+    
+    <!-- Language Switcher -->
+    <div class="fixed top-20 right-6 z-50">
+        <a href="index-ar.html" class="bg-slate-800/90 backdrop-blur-md hover:bg-slate-700 text-cyan-400 font-semibold py-2 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 flex items-center gap-2 group">
+            <i class="fas fa-globe"></i>
+            <span>العربية</span>
+        </a>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-950/70 backdrop-blur-lg sticky top-0 z-40 shadow-lg shadow-cyan-500/10 border-b border-slate-800/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black gradient-text">Ali Samir Ali</a>
+            <div class="hidden md:flex space-x-8 font-semibold" id="navMenu">
+                <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors duration-300">Education</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none text-2xl text-gray-300 hover:text-cyan-400">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 hover:text-cyan-400 transition-colors duration-300">About</a>
+            <a href="#skills" class="block py-2 hover:text-cyan-400 transition-colors duration-300">Skills</a>
+            <a href="#experience" class="block py-2 hover:text-cyan-400 transition-colors duration-300">Experience</a>
+            <a href="#projects" class="block py-2 hover:text-cyan-400 transition-colors duration-300">Projects</a>
+            <a href="#education" class="block py-2 hover:text-cyan-400 transition-colors duration-300">Education</a>
+            <a href="#contact" class="block py-2 hover:text-cyan-400 transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 py-20 md:py-32">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <!-- Profile Image -->
+            <div class="md:w-1/3 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
+                <div class="relative">
+                    <div class="w-80 h-80 rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20 profile-image">
+                        <img src="images/profile.jpg" 
+                             alt="Ali Samir Ali" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg floating">
+                        <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="md:w-2/3 text-center md:text-left" data-aos="fade-left" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text">Ali Samir Ali</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-cyan-400 font-bold mb-4">
+                    Full Stack Flutter Developer
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed">
+                    Expert in <span class="text-cyan-400 font-semibold">Frontend</span> & <span class="text-cyan-400 font-semibold">Backend</span> development
+                </p>
+                <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                    Specialized in building beautiful, high-performance mobile applications for iOS and Android using cutting-edge technologies and best practices. Creating seamless user experiences from pixel-perfect UIs to robust backend architectures.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#projects" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+                        <i class="fas fa-rocket mr-2"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get In Touch
+                    </a>
+                    <button onclick="downloadCV()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg pulse">
+                        <i class="fas fa-download mr-2"></i>
+                        Download CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-slate-900/50 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                <span class="gradient-text">About Me</span>
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Who Am I?</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            I'm a passionate <span class="text-cyan-400 font-semibold">Full Stack Flutter Developer</span> with extensive experience in transforming creative ideas into real-world applications that run seamlessly across multiple devices. My expertise spans the <span class="text-cyan-400 font-semibold">entire development stack</span> - from crafting pixel-perfect, responsive user interfaces to architecting robust backend systems.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            I specialize in building <span class="text-cyan-400 font-semibold">production-ready applications</span> with clean, maintainable code, always paying attention to the finest details of UI/UX design and system architecture. My approach combines technical excellence with a deep understanding of user needs.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            I believe in the power of continuous learning and staying current with the latest developments in mobile app development, always striving to deliver innovative technical solutions that meet client needs and achieve their goals.
+                        </p>
+                    </div>
+                    <div class="space-y-6" data-aos="fade-left" data-aos-delay="400">
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
+                            <h4 class="text-xl font-semibold text-cyan-400 mb-3 flex items-center">
+                                <i class="fas fa-laptop-code mr-3"></i>
+                                Frontend Development
+                            </h4>
+                            <div class="w-full bg-slate-700 rounded-full h-3">
+                                <div class="progress-bar bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full" style="--progress-width: 95%"></div>
+                            </div>
+                            <span class="text-sm text-gray-400 mt-2 block">95% - Expert Level</span>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
+                            <h4 class="text-xl font-semibold text-cyan-400 mb-3 flex items-center">
+                                <i class="fas fa-server mr-3"></i>
+                                Backend Development
+                            </h4>
+                            <div class="w-full bg-slate-700 rounded-full h-3">
+                                <div class="progress-bar bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full" style="--progress-width: 90%"></div>
+                            </div>
+                            <span class="text-sm text-gray-400 mt-2 block">90% - Advanced Level</span>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
+                            <h4 class="text-xl font-semibold text-cyan-400 mb-3 flex items-center">
+                                <i class="fas fa-mobile-alt mr-3"></i>
+                                Flutter & Dart
+                            </h4>
+                            <div class="w-full bg-slate-700 rounded-full h-3">
+                                <div class="progress-bar bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full" style="--progress-width: 92%"></div>
+                            </div>
+                            <span class="text-sm text-gray-400 mt-2 block">92% - Expert Level</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                <span class="gradient-text">Technical Skills</span>
+            </h2>
+            <p class="text-center text-gray-400 text-lg mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Comprehensive expertise in modern development technologies
+            </p>
+            
+            <!-- Frontend Skills -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-8 text-center" data-aos="fade-up">Frontend Development</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-flutter text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Flutter</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-code text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Dart</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fab fa-react text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">React</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fab fa-html5 text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">HTML5</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fab fa-css3-alt text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">CSS3</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fab fa-js text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">JavaScript</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-8 text-center" data-aos="fade-up">Backend Development</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-database text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Firebase</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-database text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Supabase</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fab fa-node-js text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Node.js</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-server text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">REST APIs</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fas fa-database text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">SQLite</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-plug text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">GraphQL</h3>
+                        <span class="text-sm text-gray-400 mt-2">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Others -->
+            <div>
+                <h3 class="text-2xl font-bold text-cyan-400 mb-8 text-center" data-aos="fade-up">Tools & Technologies</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-git-alt text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Git</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-github text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">GitHub</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-shield-alt text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Security</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-layer-group text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">State Mgmt</h3>
+                        <span class="text-sm text-gray-400 mt-2">Expert</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fas fa-palette text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">UI/UX</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                    <div class="skill-card flex flex-col items-center p-6 bg-slate-800 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-bug text-5xl gradient-text mb-4"></i>
+                        <h3 class="font-bold text-lg">Testing</h3>
+                        <span class="text-sm text-gray-400 mt-2">Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-slate-900/50 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                <span class="gradient-text">Professional Experience</span>
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="timeline-item bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-right" data-aos-delay="200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cyan-400">Full Stack Flutter Developer - Freelancer</h3>
+                            <span class="text-gray-400 bg-slate-700 px-3 py-1 rounded-full text-sm">2021 - Present</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Working with diverse clients to develop custom applications using Flutter framework with comprehensive frontend and backend solutions</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Developed 15+ production-ready applications for multiple platforms</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Architected and implemented scalable backend systems using Firebase and Supabase</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Enhanced app performance and user experience with advanced optimization techniques</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Integrated RESTful APIs and real-time database solutions</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Managed complete project lifecycle from concept to deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-left" data-aos-delay="400">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cyan-400">Frontend Developer</h3>
+                            <span class="text-gray-400 bg-slate-700 px-3 py-1 rounded-full text-sm">2020 - 2021</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Developed interactive and responsive user interfaces for web applications</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Created responsive websites compatible with all devices</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Utilized HTML, CSS, JavaScript, and modern frameworks</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Collaborated with design and backend teams</li>
+                            <li><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Implemented modern UI/UX design principles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                <span class="gradient-text">Featured Projects</span>
+            </h2>
+            <p class="text-center text-gray-400 text-lg mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Showcasing my expertise in building comprehensive, production-ready applications
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured Project: Madraset El-Wedad -->
+                <div class="project-card bg-gradient-to-br from-slate-800/70 to-slate-900/70 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border-2 border-cyan-400/30 col-span-full md:col-span-2 lg:col-span-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="md:flex">
+                        <div class="md:w-2/5 h-64 md:h-auto bg-gradient-to-br from-green-700 to-green-950 flex items-center justify-center relative overflow-hidden p-6">
+                            <img src="images/project.png" 
+                                 alt="Madraset El-Wedad - Official App of Dr. Jaber Al-Baghdadi" 
+                                 class="w-full h-full object-contain drop-shadow-2xl">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">⭐ FEATURED PROJECT</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <span class="bg-yellow-500/90 backdrop-blur-sm text-slate-900 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg block text-center">
+                                    🎖️ Official App - Dr. Jaber Al-Baghdadi
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-8 md:w-3/5">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Madraset Hay Ala Al-Wedad</h3>
+                                    <p class="text-yellow-400 text-sm font-semibold mb-1">🎖️ Official Application</p>
+                                    <p class="text-gray-400 text-sm">For the renowned Islamic scholar <span class="text-cyan-400 font-semibold">Dr. Jaber Al-Baghdadi</span></p>
+                                </div>
+                                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Published</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 leading-relaxed">
+                                The <span class="text-cyan-400 font-semibold">official comprehensive Islamic application</span> of the distinguished scholar Dr. Jaber Al-Baghdadi. Built with Flutter featuring the Holy Quran, Hadith collections, prayer times, daily remembrances, and community features. A complete spiritual companion with 20+ advanced features and robust architecture.
+                            </p>
+                            <div class="mb-6">
+                                <h4 class="text-cyan-400 font-semibold mb-3 text-lg">Key Features:</h4>
+                                <ul class="text-gray-400 space-y-2 text-sm">
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Complete Quran with advanced search and bookmarks</li>
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Comprehensive Hadith library with categorization</li>
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Real-time prayer times with Adhan notifications</li>
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i><span class="text-cyan-300 font-semibold">Supabase-powered Community:</span> Real-time group Dhikr system with live updates</li>
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i><span class="text-cyan-300 font-semibold">YouTube API Integration:</span> Dynamic content across all sections with auto-updates</li>
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Background services and offline support</li>
+                                    <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Beautiful Arabic UI with 20+ custom fonts</li>
+                                </ul>
+                            </div>
+                            <div class="mb-6 bg-slate-900/50 p-4 rounded-lg border border-cyan-400/30">
+                                <h4 class="text-yellow-400 font-bold mb-3 text-base flex items-center">
+                                    <i class="fas fa-star mr-2"></i>
+                                    Main Highlights:
+                                </h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex items-start gap-3">
+                                        <i class="fas fa-users text-purple-400 text-lg mt-1"></i>
+                                        <div>
+                                            <p class="text-cyan-300 font-semibold">Real-time Community Groups</p>
+                                            <p class="text-gray-400">Supabase integration for live group Dhikr sessions with instant synchronization and stunning interface</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fab fa-youtube text-red-400 text-lg mt-1"></i>
+                                        <div>
+                                            <p class="text-cyan-300 font-semibold">YouTube API Integration</p>
+                                            <p class="text-gray-400">Seamless content integration across all app sections with automatic flexible updates</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fas fa-edit text-green-400 text-lg mt-1"></i>
+                                        <div>
+                                            <p class="text-cyan-300 font-semibold">No-Code Content Management</p>
+                                            <p class="text-gray-400">Update app content dynamically without requiring developer intervention</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="text-cyan-400 font-semibold mb-3">Technology Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">Flutter</span>
+                                    <span class="bg-orange-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">Firebase</span>
+                                    <span class="bg-purple-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">Supabase</span>
+                                    <span class="bg-green-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">SQLite</span>
+                                    <span class="bg-red-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">Provider</span>
+                                    <span class="bg-yellow-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">GetX</span>
+                                    <span class="bg-indigo-600/80 text-white px-3 py-1 rounded-lg text-xs font-semibold">REST APIs</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="https://play.google.com/store/apps/details?id=com.madrasetalwed&pli=1" target="_blank" class="flex-1 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 text-center transform hover:scale-105 shadow-lg">
+                                    <i class="fab fa-google-play mr-2"></i> View on Play Store
+                                </a>
+                                <button class="bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Islamic App -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden shadow-lg border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop" 
+                             alt="Islamic App" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-xl text-cyan-400">Islamic Companion App</h3>
+                            <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">Completed</span>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                            Comprehensive app for Muslims featuring Quran, Hadith, prayer times, and daily prayers with advanced search capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Flutter</span>
+                            <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">API Integration</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/tillawiy/Flutter-Islamic-App-" target="_blank" class="flex-1 bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
+                                <i class="fab fa-github mr-1"></i> GitHub
+                            </a>
+                            <button class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Chat App -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden shadow-lg border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-800 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=400&h=300&fit=crop" 
+                             alt="Chat App" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-xl text-cyan-400">Real-time Chat Application</h3>
+                            <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">Completed</span>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                            Real-time messaging app with text and image support, strong security, and intuitive user interface.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Flutter</span>
+                            <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Real-time</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/tillawiy/flutterChatApp" target="_blank" class="flex-1 bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
+                                <i class="fab fa-github mr-1"></i> GitHub
+                            </a>
+                            <button class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Time Tracking -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden shadow-lg border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="800">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" 
+                             alt="Time Tracking App" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-xl text-cyan-400">Time Tracking & Productivity</h3>
+                            <span class="bg-yellow-600 text-white px-2 py-1 rounded text-sm">In Progress</span>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                            Advanced time management tool with detailed analytics and interactive charts to help users improve productivity.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Flutter</span>
+                            <span class="bg-red-600 text-white px-2 py-1 rounded text-xs">Charts</span>
+                            <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">Analytics</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/tillawiy/Time-Tracking-app" target="_blank" class="flex-1 bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
+                                <i class="fab fa-github mr-1"></i> GitHub
+                            </a>
+                            <button class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="1000">
+                <a href="https://github.com/tillawiy" target="_blank" class="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fab fa-github mr-2"></i>
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 bg-slate-900/50 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                <span class="gradient-text">Education & Qualifications</span>
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-university text-3xl text-cyan-400 mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-bold text-cyan-400">Bachelor of Computer Science</h3>
+                                <p class="text-gray-400">Minia University</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-2">Major: Software Engineering</p>
+                        <p class="text-gray-400">2018 - 2022</p>
+                        <p class="text-gray-400 mt-2">Grade: Very Good</p>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-400/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-3xl text-cyan-400 mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-bold text-cyan-400">Professional Development</h3>
+                                <p class="text-gray-400">Online Learning Platforms</p>
+                            </div>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>Flutter & Dart Masterclass</li>
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>Firebase for Developers</li>
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>UI/UX Design Principles</li>
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>Mobile App Security</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 section-fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                <span class="gradient-text">Get In Touch</span>
+                <span class="block w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div data-aos="fade-right" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700 hover:border-cyan-400 transition-colors duration-300">
+                                <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-400">Email</h4>
+                                    <a href="mailto:egy.tillawiy@gmail.com" class="text-gray-300 hover:text-cyan-300 transition-colors duration-300">egy.tillawiy@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700 hover:border-cyan-400 transition-colors duration-300">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-400">Phone</h4>
+                                    <a href="tel:01067696013" class="text-gray-300 hover:text-cyan-300 transition-colors duration-300">+20 106 769 6013</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700 hover:border-cyan-400 transition-colors duration-300">
+                                <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-400">Location</h4>
+                                    <p class="text-gray-300">Mallawi, Minya, Egypt</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700 hover:border-cyan-400 transition-colors duration-300">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-400">Working Hours</h4>
+                                    <p class="text-gray-300">Sat - Thu: 9 AM - 6 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-cyan-400 mb-4">Follow Me</h4>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/tillawiy" target="_blank" class="w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-blue-400 hover:bg-blue-300 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div data-aos="fade-left" data-aos-delay="400">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Send a Message</h3>
+                        <form class="space-y-6" onsubmit="sendMessage(event)">
+                            <div>
+                                <label class="block text-gray-300 font-semibold mb-2">Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:border-cyan-400 focus:outline-none transition-colors duration-300 text-gray-200">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 font-semibold mb-2">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:border-cyan-400 focus:outline-none transition-colors duration-300 text-gray-200">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 font-semibold mb-2">Subject</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:border-cyan-400 focus:outline-none transition-colors duration-300 text-gray-200">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 font-semibold mb-2">Message</label>
+                                <textarea rows="5" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:border-cyan-400 focus:outline-none transition-colors duration-300 text-gray-200 resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 border-t border-slate-700">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/tillawiy" target="_blank" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="border-t border-slate-700 pt-6">
+                <p class="mb-2">&copy; 2024 All Rights Reserved - <span class="text-cyan-400 font-semibold">Ali Samir Ali</span></p>
+                <p class="text-sm">Developed with <i class="fas fa-heart text-red-500"></i> using HTML, CSS & JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 opacity-0 invisible hover:scale-110 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="interactive.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Section fade-in animation
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Progress bars animation
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
+        });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Download CV function
+        function downloadCV() {
+            alert('CV download will be available soon!');
+        }
+
+        // Send message function
+        function sendMessage(event) {
+            event.preventDefault();
+            alert('Message sent successfully! I will contact you soon.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
