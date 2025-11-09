@@ -201,51 +201,7 @@ class TiltEffect {
     }
 }
 
-// Sound Effects
-class SoundEffects {
-    constructor() {
-        this.sounds = {
-            click: this.createSound(800, 0.1, 'square'),
-            hover: this.createSound(600, 0.05, 'sine'),
-            success: this.createSound(880, 0.2, 'sine')
-        };
-        this.init();
-    }
-
-    createSound(frequency, duration, type = 'sine') {
-        return () => {
-            if ('AudioContext' in window || 'webkitAudioContext' in window) {
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                oscillator.frequency.value = frequency;
-                oscillator.type = type;
-                
-                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-                
-                oscillator.start();
-                oscillator.stop(audioContext.currentTime + duration);
-            }
-        };
-    }
-
-    init() {
-        // Add click sounds to buttons
-        document.querySelectorAll('button, .btn, a[href="#"]').forEach(element => {
-            element.addEventListener('click', this.sounds.click);
-        });
-
-        // Add hover sounds to cards
-        document.querySelectorAll('.project-card, .skill-card').forEach(element => {
-            element.addEventListener('mouseenter', this.sounds.hover);
-        });
-    }
-}
+// Sound Effects - Removed
 
 // Smooth Scroll with Easing
 class SmoothScroll {
@@ -369,70 +325,6 @@ class FormValidator {
     }
 }
 
-// Dark Mode Toggle
-class DarkModeToggle {
-    constructor() {
-        this.isDark = localStorage.getItem('darkMode') === 'true';
-        this.init();
-    }
-
-    init() {
-        // Create toggle button
-        const toggleButton = document.createElement('button');
-        // Check if page is RTL (Arabic) or LTR (English)
-        const isRTL = document.documentElement.dir === 'rtl';
-        const position = isRTL ? 'right-6' : 'left-6';
-        
-        toggleButton.className = `fixed top-20 ${position} w-12 h-12 bg-slate-800/90 backdrop-blur-md hover:bg-slate-700 text-yellow-400 rounded-full shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 z-50 no-print`;
-        toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        toggleButton.title = isRTL ? 'الوضع الليلي' : 'Dark Mode';
-        toggleButton.addEventListener('click', () => this.toggle());
-        document.body.appendChild(toggleButton);
-
-        // Apply saved theme
-        if (this.isDark) {
-            this.enableDarkMode();
-        }
-    }
-
-    toggle() {
-        this.isDark = !this.isDark;
-        localStorage.setItem('darkMode', this.isDark);
-        
-        // Update button icon
-        const toggleButton = document.querySelector('.fixed.top-20[class*="w-12"]');
-        if (toggleButton) {
-            toggleButton.innerHTML = this.isDark 
-                ? '<i class="fas fa-sun"></i>' 
-                : '<i class="fas fa-moon"></i>';
-        }
-        
-        if (this.isDark) {
-            this.enableDarkMode();
-        } else {
-            this.disableDarkMode();
-        }
-    }
-
-    enableDarkMode() {
-        document.body.classList.add('dark-mode');
-        // Update icon if button exists
-        const toggleButton = document.querySelector('.fixed.top-20[class*="w-12"]');
-        if (toggleButton) {
-            toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-    }
-
-    disableDarkMode() {
-        document.body.classList.remove('dark-mode');
-        // Update icon if button exists
-        const toggleButton = document.querySelector('.fixed.top-20[class*="w-12"]');
-        if (toggleButton) {
-            toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-    }
-}
-
 // Performance Monitor
 class PerformanceMonitor {
     constructor() {
@@ -490,13 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new TiltEffect();
     new SmoothScroll();
     new FormValidator();
-    new DarkModeToggle();
     new PerformanceMonitor();
-    
-    // Add sound effects only if user interacts (browser requirement)
-    document.addEventListener('click', () => {
-        new SoundEffects();
-    }, { once: true });
 
     // Initialize typing effect for dynamic text
     const dynamicTextElement = document.querySelector('.dynamic-text');
@@ -535,14 +421,6 @@ trailStyles.textContent = `
     .error {
         border-color: #ef4444 !important;
         box-shadow: 0 0 0 1px #ef4444;
-    }
-    
-    .dark-mode {
-        filter: invert(1) hue-rotate(180deg);
-    }
-    
-    .dark-mode img {
-        filter: invert(1) hue-rotate(180deg);
     }
 `;
 document.head.appendChild(trailStyles);
